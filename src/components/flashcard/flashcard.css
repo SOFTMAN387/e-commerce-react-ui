@@ -1,0 +1,66 @@
+.flashmaincard {
+    margin: 10px 30px;
+}
+
+.flash-single-card {
+    background-color: rgba(248, 246, 246, 0.952);
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.flash-single-card :hover {
+    cursor: pointer;
+}
+
+.flash-deals {
+    font-weight: 900;
+}
+
+.flah-img {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.flah-img img {
+    width: 150px;
+    height: auto;
+}
+
+.flash-rates {
+    color: hsla(32, 100%, 50%, 0.849)
+}
+
+.fa-heart {
+    color: hsl(4, 89%, 46%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.flash-single-card :hover .fa-heart {
+    opacity: 1;
+}
+
+.flash-price {
+    color: teal;
+    font-weight: 500;
+}
+
+.flash-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flash-bottom-left {
+    margin-left: 20%;
+}
+
+.flash-bottom-right {
+    display: flex;
+    margin-right: 10%;
+    font-size: 20px;
+}
+
+.fa-plus {
+    padding-top: 65px;
+    color: teal;
+}
