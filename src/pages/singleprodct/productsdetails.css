@@ -1,0 +1,32 @@
+.details-container {
+    margin: 20px 20px;
+}
+
+.img-details-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-div {
+    margin: 25px 10px;
+    padding: 25px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inc-dec-btn {
+    padding: 10px;
+    margin: 5px;
+    font-weight: 900;
+    color: rgb(11, 91, 94);
+    font-size: larger;
+    cursor: pointer;
+}
+
+.details-btn {
+    border: none;
+    background-color: teal;
+    color: white;
+    padding: 5px;
+}

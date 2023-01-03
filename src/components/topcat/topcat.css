@@ -1,0 +1,24 @@
+.topcat-container {
+    margin: 10px 30px;
+}
+
+.img-div {
+    padding: 5px 10px;
+    width: 350px;
+    height: 150px;
+}
+
+.img-div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.img-div img {
+    width: 350px;
+    height: 100px;
+}
+
+.fa-list {
+    color: teal;
+}

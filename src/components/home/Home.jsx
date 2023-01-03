@@ -4,6 +4,10 @@ import Navbar from '../common/navbar/Navbar';
 import Footer from "../common/footer/Footer";
 import Banner from '../slider/Banner';
 import FlashCard from '../flashcard/FlashCard';
+import TopCat from '../topcat/TopCat';
+import NewArivals from '../arrivals/NewArivals';
+import Services from '../common/service/Services';
+import ProductsLists from '../../pages/productslist/ProductsLists';
 
 const Home = () => {
   return (
@@ -13,6 +17,10 @@ const Home = () => {
         <Navbar />
         <Banner />
         <FlashCard />
+        <TopCat />
+        <NewArivals />
+        <ProductsLists />
+        <Services />
         <Footer />
     </div>
   </>

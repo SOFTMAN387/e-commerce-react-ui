@@ -1,10 +1,25 @@
 .flashmaincard {
-    margin: 10px 30px;
+    margin: 5px 20px;
 }
 
 .flash-single-card {
+    margin: 5px 10px;
     background-color: rgba(248, 246, 246, 0.952);
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.fa-wand-magic-sparkles {
+    color: teal;
+}
+
+.flash-offer {
+    color: white;
+    border-radius: 40%;
+    width: 20%;
+    height: 20px;
+    background-color: teal;
+    text-align: center;
+    font-size: 12px;
 }
 
 .flash-single-card :hover {
@@ -22,7 +37,7 @@
 }
 
 .flah-img img {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 
@@ -60,7 +75,7 @@
     font-size: 20px;
 }
 
-.fa-plus {
+.fa-add {
     padding-top: 65px;
     color: teal;
 }

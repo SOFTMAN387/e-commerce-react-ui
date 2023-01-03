@@ -1,0 +1,14 @@
+.arival-main-container {
+    margin: 5px 10px
+}
+
+.arival-single-card {
+    width: 150px;
+    height: 200px;
+}
+
+.new-icon {
+    padding: 3px;
+    background-color: teal;
+    color: white;
+}
