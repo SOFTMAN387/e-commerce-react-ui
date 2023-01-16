@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./topcat.css";
+import { categories } from '../Api/ApiData';
 const TopCat = () => {
 
     const responsive = {
@@ -29,26 +30,16 @@ const TopCat = () => {
        <br></br>
         <Carousel responsive={responsive}
             arrows={false} infiniteLoop autoPlay >
-            <div className='single-card'>
+            {categories.map((cat,i)=>{
+               return(<>
+                  <div className='single-card' key={i}>
                  <div className='img-div'>
-                    <img alt="img"src="images/i-phone1.jpg" className='img-fluid'/>
+                    <img alt="img"src={cat.img} className='img-fluid'/>
                  </div>   
             </div>
-            <div className='single-card'>
-                 <div className='img-div'>
-                    <img alt="img"src="images/i-phone1.jpg" className='img-fluid'/>
-                 </div>   
-            </div>
-            <div className='single-card'>
-                 <div className='img-div'>
-                    <img alt="img"src="images/i-phone1.jpg" className='img-fluid'/>
-                 </div>   
-            </div>
-            <div className='single-card'>
-                 <div className='img-div'>
-                    <img alt="img"src="images/i-phone1.jpg" className='img-fluid'/>
-                 </div>   
-            </div>
+               </>)
+            })}
+           
         </Carousel>
        </div>
      

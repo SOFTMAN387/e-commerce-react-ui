@@ -10,19 +10,19 @@ const Banner = () => {
         <>
             <Carousel infiniteLoop autoPlay>
                 <div className='image'>
-                    <img src="images/about.png" />
+                    <img src="images/sliderImg/banner1.avif"  alt='banner_img'/>
 
                 </div>
                 <div className='image'>
-                    <img src="images/contact.png" />
+                    <img src="images/sliderImg/banner2.avif"   alt='banner_img' />
 
                 </div>
                 <div className='image'>
-                    <img src="images/i-phone1.jpg" />
+                    <img src="images/sliderImg/banner3.jpg"   alt='banner_img' />
 
                 </div>
                 <div className='image'>
-                    <img src="images/i-phone2.jpg" />
+                    <img src="images/sliderImg/banner4.avif"   alt='banner_img'  />
 
                 </div>
 

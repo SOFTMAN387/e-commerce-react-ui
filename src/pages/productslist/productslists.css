@@ -7,7 +7,6 @@
 
 .prdct-card {
     opacity: 1;
-    margin: 10px 5px;
     width: 150px;
     height: 150x;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -19,8 +18,8 @@
 }
 
 .prdct-card img {
-    width: 150px;
-    height: 150x;
+    width: 130px;
+    height: 130x;
 }
 
 .prdct-card-bottom {
