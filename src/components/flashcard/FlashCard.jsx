@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState } from 'react';
 import { FlashDeals } from '../Api/ApiData';
+import { Link } from 'react-router-dom';
 const FlashCard = () => {
     const [like, setLike] = useState(0);
     const increment = () => {
@@ -39,20 +40,23 @@ const FlashCard = () => {
         <>
             <div className="flashmaincard">
 
-                <h5 className='flash-deals pl-5'><i class="fa-solid fa-wand-magic-sparkles "></i>  Flash Deals !</h5>
+                <h5 className='flash-deals pl-5'><i className="fa-solid fa-wand-magic-sparkles "></i>  Flash Deals !</h5>
                 <br></br>
 
 
 
                 <Carousel responsive={responsive}>
-                    {FlashDeals.map((flahDeals, i) => {
+                    {FlashDeals.map((flahDeals,index) => {
                         return (<>
-                            <div className='flashcentercard' key={i}>
-                                <div className='flash-single-card'>
+                            <div className='flashcentercard' >
+                                <div className='flash-single-card' key={index}>
 
                                     <div className='flah-img'>
                                         <p className='flash-offer'>{flahDeals.off}% Off</p>
-                                        <img src={flahDeals.img} className="img-fluid" alt="flash_img" />
+                                        <Link to={`products/${flahDeals._id}`}>
+                                        <img src={flahDeals.img} className="img-fluid"  alt="flash_img" />
+                                        </Link>
+                                       
                                     </div>
                                     <div className='flash-bottom'>
                                         <div className='flash-bottom-left'>
@@ -80,7 +84,7 @@ const FlashCard = () => {
 
 
                   
-                </Carousel>;
+                </Carousel>
 
 
 

@@ -2,6 +2,7 @@ import Home from "./components/home/Home";
 import { Route, Routes } from "react-router-dom";
 import Carts from "./pages/productslist/cart/Carts";
 import ProductsDetails from "./pages/singleprodct/ProductsDetails";
+import ProductsLists from "./pages/productslist/ProductsLists";
 import "./App.css";
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route exact path="/" element={<Home />} />
       <Route exact path="/cart/:id" element={<Carts />} />
       <Route exact path="/products/:id" element={<ProductsDetails />} />
+      <Route exact path="/productLists/:cat" element={<ProductsLists />} />
       {/* <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
          */}

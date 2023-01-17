@@ -1,68 +1,69 @@
 import React from 'react'
 import "./footer.css";
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-  <><footer class="footer-distributed">
+    <><footer className="footer-distributed">
 
-<div class="footer-left">
+      <div className="footer-left">
 
-  <h4>Er. <span>Manish Gupta</span></h4>
+        <h4>Er. <span>Manish Gupta</span></h4>
 
-  <p class="footer-links">
-    <a href="#" class="link-1">Home</a>
-    
-    <a href="#">Blog</a>
-  
-    <a href="#">Pricing</a>
-  
-    <a href="#">About</a>
-    
-    <a href="#">Faq</a>
-    
-    <a href="#">Contact</a>
-  </p>
+        <p className="footer-links">
+          <Link to="" className="link-1">Home</Link>
 
-  <p class="footer-company-name">Company Name © 2020</p>
-</div>
+          <Link to="">Blog</Link>
 
-<div class="footer-center">
+          <Link to="">Pricing</Link>
 
-  <div>
-    <i class="fa fa-map-marker"></i>
-    <p><span>Patna,Bihar-India</span> Chhoti nagla patna city</p>
-  </div>
+          <Link to="">About</Link>
 
-  <div>
-    <i class="fa fa-phone"></i>
-    <p>+6205988966</p>
-  </div>
+          <Link to="">Faq</Link>
 
-  <div>
-    <i class="fa fa-envelope"></i>
-    <p><a href="mailto:support@company.com">support@company.com</a></p>
-  </div>
+          <Link to="">Contact</Link>
+        </p>
 
-</div>
+        <p className="footer-company-name">Company Name © 2020</p>
+      </div>
 
-<div class="footer-right">
+      <div className="footer-center">
 
-  <p class="footer-company-about">
-    <span>About the company</span>
-    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-  </p>
+        <div>
+          <i className="fa fa-map-marker"></i>
+          <p><span>Patna,Bihar-India</span> Chhoti nagla patna city</p>
+        </div>
 
-  <div class="footer-icons">
+        <div>
+          <i className="fa fa-phone"></i>
+          <p>+6205988966</p>
+        </div>
 
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-github"></i></a>
+        <div>
+          <i className="fa fa-envelope"></i>
+          <p><Link to="mailto:support@company.com">support@company.com</Link></p>
+        </div>
 
-  </div>
+      </div>
 
-</div>
+      <div className="footer-right">
 
-</footer></>
+        <p className="footer-company-about">
+          <span>About the company</span>
+          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+        </p>
+
+        <div className="footer-icons">
+
+          <Link to=""><i className="fa fa-facebook"></i></Link>
+          <Link to=""><i className="fa fa-twitter"></i></Link>
+          <Link to=""><i className="fa fa-linkedin"></i></Link>
+          <Link to=""><i className="fa fa-github"></i></Link>
+
+        </div>
+
+      </div>
+
+    </footer></>
   )
 }
 

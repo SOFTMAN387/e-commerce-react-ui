@@ -19,7 +19,7 @@ const ProductsLists = () => {
                                 <img src={items.img} className='img-fluid' alt="prdcts_img"/>
                                 <div className='prdct-card-bottom'>
                                     <i className="fa fa-shopping-cart font-icon" aria-hidden="true"></i>
-                                    <Link to={`products/${items.id}`}>   <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
+                                    <Link to={`products/${items.id}`}> <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
                                     
                                    
 
