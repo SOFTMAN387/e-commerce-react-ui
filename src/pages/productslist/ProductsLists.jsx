@@ -10,6 +10,7 @@ const ProductsLists = () => {
         <br></br>
             <div className='prdct-list-container'>
                 <div className='row'>
+                
                     {Products.map((items => {
                         return (<>
                        
@@ -19,7 +20,7 @@ const ProductsLists = () => {
                                 <img src={items.img} className='img-fluid' alt="prdcts_img"/>
                                 <div className='prdct-card-bottom'>
                                     <i className="fa fa-shopping-cart font-icon" aria-hidden="true"></i>
-                                    <Link to={`products/${items.id}`}> <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
+                                    <a href={`products/${items.id}`}> <i className="fa fa-search font-icon" aria-hidden="true"></i> </a>
                                     
                                    
 

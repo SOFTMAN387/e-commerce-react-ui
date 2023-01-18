@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import "./navbar.css";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [cat, setCat] = useState();
     console.log(cat);
-    if(cat){
+    if (cat) {
         navigate(`/productLists/${cat}`);
 
     }
@@ -16,7 +16,7 @@ const Navbar = () => {
     //   navigate(`/productLists/${cat}`);
 
     // }
-  
+
     return (
         <nav className="navbar">
             <div className="navbar-container container">
@@ -31,7 +31,7 @@ const Navbar = () => {
                     <li><Link to="/about">About</Link></li>
                     <li>
                         <select onChange={(e) => setCat(e.target.value)}>
-                            <option disabled>Categories</option>
+                            <option >Categories</option>
                             <option value="sofa">Sofa</option>
                             <option value="chair">Chair</option>
                             <option value="bed">Bed</option>
