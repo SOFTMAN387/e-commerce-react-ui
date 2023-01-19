@@ -17,7 +17,6 @@ const ProductsDetails = () => {
   return (
    <>
 
-<Header />
 <Navbar />
     <div className='details-container'>
         <div className='row'>

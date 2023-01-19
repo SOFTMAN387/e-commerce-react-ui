@@ -14,8 +14,6 @@ const FilterProductDetails = () => {
   const filterDetails=Products.filter((x)=>x.id==filteredPrdct_Id);
   return (
     <>
-
-    <Header />
     <Navbar />
         <div className='details-container'>
             <div className='row'>

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const navigate = useNavigate();
     const [cat, setCat] = useState();
-    console.log(cat);
+    //console.log(cat);
     if (cat) {
         navigate(`/productLists/${cat}`);
 
@@ -19,7 +19,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
+         
             <div className="navbar-container container">
+           
                 <input type="checkbox" className='chk-box' />
                 <div className="hamburger-lines">
                     <span className="line line1"></span>
@@ -27,7 +29,7 @@ const Navbar = () => {
                     <span className="line line3"></span>
                 </div>
                 <ul className="menu-items">
-                    <li><Link to="#">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li>
                         <select onChange={(e) => setCat(e.target.value)}>

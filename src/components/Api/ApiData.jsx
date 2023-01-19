@@ -4,23 +4,23 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 11"
+        title: "Chair 11",
     },
     {
         id: 2,
         img: "/images/sofa/sofa1.jpg",
         desc: "products desc is here....",
-        price: 2000,
+        price: 3000,
         category: "sofa",
-        title: "Sofa 1"
+        title: "Sofa 1",
     },
     {
         id: 3,
         img: "/images/bed/bed1.jpg",
         desc: "products desc is here....",
-        price: 2000,
+        price: 4000,
         category: "bed",
-        title: "Bed 1"
+        title: "Bed 1",
     },
     {
         id: 4,
@@ -28,7 +28,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 1"
+        title: "Dinning Table 1",
     },
     {
         id: 5,
@@ -36,7 +36,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa 2"
+        title: "Sofa 2",
     },
     {
         id: 6,
@@ -44,31 +44,31 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 2"
+        title: "Bed 2",
     },
     {
         id: 7,
         img: "/images/tables/table2.jpg",
         desc: "products desc is here....",
-        price: 2000,
+        price: 12000,
         category: "dinning",
-        title: "Dinning Table 2"
+        title: "Dinning Table 2",
     },
     {
         id: 8,
         img: "/images/chairs/chair3.jpg",
         desc: "products desc is here....",
-        price: 2000,
+        price: 1000,
         category: "chair",
-        title: "Chair 3"
+        title: "Chair 3",
     },
     {
         id: 9,
         img: "/images/sofa/sofa3.jpg",
         desc: "products desc is here....",
-        price: 2000,
+        price: 12000,
         category: "sofa",
-        title: "Sofa 3"
+        title: "Sofa 3",
     },
     {
         id: 10,
@@ -76,7 +76,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 4"
+        title: "Chair 4",
     },
     {
         id: 11,
@@ -84,7 +84,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 3"
+        title: "Bed 3",
     },
     {
         id: 12,
@@ -92,14 +92,14 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 3"
+        title: "Dinning Table 3",
     },
     {
         id: 13,
         img: "/images/chairs/chair5.jpg",
         desc: "products desc is here....",
         price: 2000,
-        title: "Chiar 5"
+        title: "Chiar 5",
     },
     {
         id: 14,
@@ -107,14 +107,15 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa Set 4"
-    }, {
+        title: "Sofa Set 4",
+    },
+    {
         id: 15,
         img: "/images/bed/bed4.jpg",
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 4"
+        title: "Bed 4",
     },
     {
         id: 16,
@@ -122,28 +123,31 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 4"
-    }, {
+        title: "Dinning Table 4",
+    },
+    {
         id: 17,
         img: "/images/chairs/chair6.jpg",
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 6"
-    }, {
+        title: "Chair 6",
+    },
+    {
         id: 18,
         img: "/images/sofa/sofa5.jpg",
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa 5"
-    }, {
+        title: "Sofa 5",
+    },
+    {
         id: 19,
         img: "/images/bed/bed5.jpg",
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 5"
+        title: "Bed 5",
     },
     {
         id: 20,
@@ -151,7 +155,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 5"
+        title: "Dinning Table 5",
     },
     {
         id: 21,
@@ -159,7 +163,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 7"
+        title: "Chair 7",
     },
     {
         id: 22,
@@ -167,7 +171,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa Set 6"
+        title: "Sofa Set 6",
     },
     {
         id: 23,
@@ -175,7 +179,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 6"
+        title: "Bed 6",
     },
     {
         id: 24,
@@ -183,7 +187,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 6"
+        title: "Dinning Table 6",
     },
     {
         id: 25,
@@ -191,7 +195,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 8"
+        title: "Chair 8",
     },
     {
         id: 26,
@@ -199,7 +203,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa Set 8"
+        title: "Sofa Set 8",
     },
     {
         id: 27,
@@ -207,7 +211,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 9"
+        title: "Chair 9",
     },
     {
         id: 28,
@@ -215,7 +219,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 8"
+        title: "Bed 8",
     },
     {
         id: 29,
@@ -223,7 +227,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table 7"
+        title: "Dinning Table 7",
     },
     {
         id: 30,
@@ -231,7 +235,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa 9"
+        title: "Sofa 9",
     },
     {
         id: 31,
@@ -239,7 +243,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 9"
+        title: "Bed 9",
     },
     {
         id: 32,
@@ -247,7 +251,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table8"
+        title: "Dinning Table8",
     },
     {
         id: 33,
@@ -255,7 +259,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 10"
+        title: "Chair 10",
     },
     {
         id: 34,
@@ -263,7 +267,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "sofa",
-        title: "Sofa Set10"
+        title: "Sofa Set10",
     },
     {
         id: 35,
@@ -271,7 +275,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 13"
+        title: "Chair 13",
     },
     {
         id: 36,
@@ -279,7 +283,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "bed",
-        title: "Bed 10"
+        title: "Bed 10",
     },
     {
         id: 37,
@@ -287,7 +291,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table9"
+        title: "Dinning Table9",
     },
     {
         id: 38,
@@ -295,7 +299,7 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "chair",
-        title: "Chair 14"
+        title: "Chair 14",
     },
     {
         id: 39,
@@ -303,50 +307,50 @@ export const Products = [{
         desc: "products desc is here....",
         price: 2000,
         category: "dinning",
-        title: "Dinning Table10"
+        title: "Dinning Table10",
     },
-
 ];
-
-
 
 export const categories = [{
         id: 1,
         img: "/images/bed/bed15.jpg",
         desc: "products desc is here....",
         price: 2000,
-        title: "I-Phone 11"
+        category: "bed",
+        title: "I-Phone 11",
     },
     {
         id: 2,
         img: "/images/sofa/sofa15.jpg",
         desc: "products desc is here....",
         price: 2000,
-        title: "I-Phone 11"
+        category: "sofa",
+        title: "I-Phone 11",
     },
     {
         id: 3,
         img: "/images/tables/table15.jpg",
         desc: "products desc is here....",
         price: 2000,
-        title: "I-Phone 11"
-    }, {
+        category: "dinning",
+        title: "I-Phone 11",
+    },
+    {
         id: 4,
         img: "/images/chairs/chair15.jpg",
         desc: "products desc is here....",
         price: 2000,
-        title: "I-Phone 11"
+        category: "chair",
+        title: "I-Phone 11",
     },
 ];
-
-
 
 export const CommingSoon = [{
         id: 1,
         img: "/images/bed/bed13.jpg",
         desc: "products desc is here....",
         price: 20000,
-        title: "Bed"
+        title: "Bed",
     },
 
     {
@@ -354,23 +358,23 @@ export const CommingSoon = [{
         img: "/images/sofa/sofa13.jpg",
         desc: "products desc is here....",
         price: 13599,
-        title: "Sofa"
+        title: "Sofa",
     },
     {
         id: 3,
         img: "/images/tables/table13.jpg",
         desc: "products desc is here....",
         price: 3600,
-        title: "Dinning Table"
-    }, {
+        title: "Dinning Table",
+    },
+    {
         id: 4,
         img: "/images/chairs/chair13.jpg",
         desc: "products desc is here....",
         price: 500,
-        title: "Chair"
+        title: "Chair",
     },
 ];
-
 
 export const FlashDeals = [{
         _id: 100,
@@ -378,7 +382,7 @@ export const FlashDeals = [{
         desc: "products desc is here....",
         price: 15000,
         off: 47,
-        title: "Bed"
+        title: "Bed",
     },
 
     {
@@ -387,7 +391,7 @@ export const FlashDeals = [{
         desc: "products desc is here....",
         price: 11500,
         off: 69,
-        title: "sofa"
+        title: "sofa",
     },
     {
         _id: 102,
@@ -395,14 +399,15 @@ export const FlashDeals = [{
         desc: "products desc is here....",
         price: 7700,
         off: 72,
-        title: "Dinning Table"
-    }, {
+        title: "Dinning Table",
+    },
+    {
         _id: 103,
         img: "/images/chairs/chair20.jpg",
         desc: "products desc is here....",
         price: 1500,
         off: 70,
-        title: "Chair"
+        title: "Chair",
     },
     {
         _id: 104,
@@ -410,7 +415,7 @@ export const FlashDeals = [{
         desc: "products desc is here....",
         price: 9500,
         off: 50,
-        title: "Bed"
+        title: "Bed",
     },
     {
         _id: 105,
@@ -418,6 +423,6 @@ export const FlashDeals = [{
         desc: "products desc is here....",
         price: 6300,
         off: 35,
-        title: "Sofa"
+        title: "Sofa",
     },
 ];

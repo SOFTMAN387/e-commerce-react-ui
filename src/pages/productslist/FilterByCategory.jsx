@@ -1,20 +1,20 @@
 import React from 'react';
 import "./productslists.css";
-//import ProductsLists from './ProductsLists';
 import { useParams } from 'react-router-dom';
 import { Products } from '../../components/Api/ApiData';
 import ProductsLists from './ProductsLists';
-import { Link } from 'react-router-dom';
-//import Navbar from '../../components/common/navbar/Navbar';
-import Header from '../../components/common/header/Header';
+//import { Link } from 'react-router-dom';
+import Footer from '../../components/common/footer/Footer';
+
+import Navbar from '../../components/common/navbar/Navbar';
 
 const FilterByCategory = () => {
 
     const catVal = useParams().cat;
     const filterProducts = Products.filter((x) => x.category == catVal);
-    console.log(filterProducts);
+    //console.log(filterProducts);
     return (<>
-        <Header />
+
         <div className='prdct-list-container'>
             <div className='row'>
                 {catVal == "all" ? <ProductsLists /> : filterProducts.map((items, i) => {
@@ -39,7 +39,7 @@ const FilterByCategory = () => {
 
         </div>
 
-
+        <Footer />
 
     </>
 
