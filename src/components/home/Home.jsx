@@ -7,6 +7,7 @@ import FlashCard from '../flashcard/FlashCard';
 import TopCat from '../topcat/TopCat';
 import NewArivals from '../arrivals/NewArivals';
 import Services from '../common/service/Services';
+import Annoucement from '../common/annoucement/Annoucement';
 import ProductsLists from '../../pages/productslist/ProductsLists';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   <>
     <div>
         <Header />
+        <Annoucement />
         <Navbar />
         <Banner />
         <FlashCard />

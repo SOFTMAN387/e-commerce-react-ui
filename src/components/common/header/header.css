@@ -1,13 +1,3 @@
-.announcement {
-    height: 40px;
-    background-color: teal;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-}
-
 .topbar {
     height: 50px;
     background-color: #ebeae5c7;

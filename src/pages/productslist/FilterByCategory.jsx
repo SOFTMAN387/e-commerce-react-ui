@@ -5,8 +5,8 @@ import { Products } from '../../components/Api/ApiData';
 import ProductsLists from './ProductsLists';
 //import { Link } from 'react-router-dom';
 import Footer from '../../components/common/footer/Footer';
+import Header from '../../components/common/header/Header';
 
-import Navbar from '../../components/common/navbar/Navbar';
 
 const FilterByCategory = () => {
 
@@ -14,7 +14,8 @@ const FilterByCategory = () => {
     const filterProducts = Products.filter((x) => x.category == catVal);
     //console.log(filterProducts);
     return (<>
-
+        <Header />
+       
         <div className='prdct-list-container'>
             <div className='row'>
                 {catVal == "all" ? <ProductsLists /> : filterProducts.map((items, i) => {

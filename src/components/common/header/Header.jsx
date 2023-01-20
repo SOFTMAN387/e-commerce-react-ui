@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./header.css";
-import SearchBar from '../searchbar/SearchBar';
-import { Products } from '../../Api/ApiData';
 
 const Header = () => {
     return (
@@ -10,7 +8,7 @@ const Header = () => {
            <div className="topbar">
         <div className="topContainer">
           <Link to="/" style={{ color: "gray", textDecoration: "none", fontWeight: "bold" }}> <h3 className='top-logo'>Softman</h3></Link>
-         <div><SearchBar products={Products} /></div>
+        
 
           <div className='log-reg-btn'>
           <Link to="/register"><button className="topButton">Register</button></Link>
@@ -29,7 +27,7 @@ const Header = () => {
         </div>
 
       </div>
-      <div className='announcement'>Super Deal ! Free Shipping on Orders Over $1000</div>
+     
 
        </>
     )

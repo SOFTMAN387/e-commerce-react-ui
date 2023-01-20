@@ -1,12 +1,13 @@
 import React from 'react';
 import "./productsdetails.css";
-import Header from '../../components/common/header/Header';
 import Navbar from '../../components/common/navbar/Navbar';
 import Services from '../../components/common/service/Services';
 import Footer from '../../components/common/footer/Footer';
 import { Products } from '../../components/Api/ApiData';
 import { FlashDeals } from '../../components/Api/ApiData';
 import { useParams } from 'react-router-dom';
+import Header from '../../components/common/header/Header';
+
 
 const ProductsDetails = () => {
   const prdct_Id=useParams().id;
@@ -16,8 +17,8 @@ const ProductsDetails = () => {
   //  console.log(prdct_Details);
   return (
    <>
-
-<Navbar />
+   <Header />
+    <Navbar />
     <div className='details-container'>
         <div className='row'>
             <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>

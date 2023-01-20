@@ -1,0 +1,15 @@
+.announcement {
+    height: 40px;
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+@media (max-width: 500px) {
+    .announcement .superDeal {
+        display: none;
+    }
+}

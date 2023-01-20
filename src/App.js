@@ -6,6 +6,8 @@ import ProductsDetails from "./pages/singleprodct/ProductsDetails";
 import FilterByCategory from "./pages/productslist/FilterByCategory";
 import SearchProductLists from "./pages/productslist/SearchProductLists";
 import FilterProductDetails from "./pages/singleprodct/FilterProductDetails";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 import "./App.css";
 function App() {
   return (
@@ -17,10 +19,9 @@ function App() {
       <Route exact path="productLists/products/:id" element={<FilterProductDetails />} />
       <Route exact path="/productLists/:cat" element={<FilterByCategory />} />
       <Route exact path="/searchLists/:cat" element={<SearchProductLists />} />
-
-      {/* <Route exact path="/login" element={<Login />} />
+       <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-         */}
+        
 
 
     </Routes>

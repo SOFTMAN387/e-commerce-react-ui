@@ -1,12 +1,12 @@
 import React from 'react'
 
 import "./productsdetails.css";
-import Header from '../../components/common/header/Header';
 import Navbar from '../../components/common/navbar/Navbar';
 import Services from '../../components/common/service/Services';
 import Footer from '../../components/common/footer/Footer';
 import { Products } from '../../components/Api/ApiData';
 import { useParams } from 'react-router-dom';
+import Header from '../../components/common/header/Header';
 
 
 const FilterProductDetails = () => {
@@ -14,6 +14,7 @@ const FilterProductDetails = () => {
   const filterDetails=Products.filter((x)=>x.id==filteredPrdct_Id);
   return (
     <>
+    <Header />
     <Navbar />
         <div className='details-container'>
             <div className='row'>
