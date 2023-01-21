@@ -7,12 +7,21 @@ import { Products } from '../../components/Api/ApiData';
 import { FlashDeals } from '../../components/Api/ApiData';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/common/header/Header';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../redux/Store';
 
 
 const ProductsDetails = () => {
+  const dispatch=useDispatch();
   const prdct_Id=useParams().id;
   const prdct_Details=Products.filter((x)=>x.id==prdct_Id);
   const flash_Details=FlashDeals.filter((x)=>x._id==prdct_Id);
+
+  const addItem=(item)=>{
+    if(item){
+      dispatch(actions.addToCart(item));
+    }
+  }
   // console.log(flash_Details);
   //  console.log(prdct_Details);
   return (
@@ -37,7 +46,7 @@ const ProductsDetails = () => {
                       <span><b>5</b></span>
                     <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-plus"></i></span>
                 </div>
-                     <button className='details-btn'>Add To Cart</button>
+                     <button className='details-btn' onClick={()=>addItem(prdct_Details)}>Add To Cart</button>
                 
              </div>
 

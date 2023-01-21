@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./header.css";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const cartLenght=useSelector((state)=>state.length)
     return (
        <>
            <div className="topbar">
@@ -18,7 +20,9 @@ const Header = () => {
            
             <Link to="/cart/123">
             <button className="cart-btn">
-            <i className="fa fa-light fa-shopping-cart cart-val-btn" ></i> <span className="cart-val">4</span>
+           
+            <i className="fa fa-light fa-shopping-cart cart-val-btn" ></i> 
+            {cartLenght >5?(<span className="cart-val">5+</span>):<span className="cart-val">{cartLenght}</span>}
             </button>
             </Link>
            

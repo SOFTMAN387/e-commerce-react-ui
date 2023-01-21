@@ -4,6 +4,7 @@ import "../login/login.css";
 import Header from '../../components/common/header/Header';
 import Annoucement from '../../components/common/annoucement/Annoucement';
 import Navbar from '../../components/common/navbar/Navbar';
+import Footer from '../../components/common/footer/Footer';
 const Register = () => {
   return (
    <>
@@ -55,6 +56,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
+        <Footer />
    </>
   )
 }

@@ -377,7 +377,7 @@ export const CommingSoon = [{
 ];
 
 export const FlashDeals = [{
-        _id: 100,
+        id: 100,
         img: "/images/bed/bed12.jpg",
         desc: "products desc is here....",
         price: 15000,
@@ -386,7 +386,7 @@ export const FlashDeals = [{
     },
 
     {
-        _id: 101,
+        id: 101,
         img: "/images/sofa/sofa12.jpg",
         desc: "products desc is here....",
         price: 11500,
@@ -394,7 +394,7 @@ export const FlashDeals = [{
         title: "sofa",
     },
     {
-        _id: 102,
+        id: 102,
         img: "/images/tables/table12.jpg",
         desc: "products desc is here....",
         price: 7700,
@@ -402,7 +402,7 @@ export const FlashDeals = [{
         title: "Dinning Table",
     },
     {
-        _id: 103,
+        id: 103,
         img: "/images/chairs/chair20.jpg",
         desc: "products desc is here....",
         price: 1500,
@@ -410,7 +410,7 @@ export const FlashDeals = [{
         title: "Chair",
     },
     {
-        _id: 104,
+        id: 104,
         img: "/images/bed/bed11.jpg",
         desc: "products desc is here....",
         price: 9500,
@@ -418,7 +418,7 @@ export const FlashDeals = [{
         title: "Bed",
     },
     {
-        _id: 105,
+        id: 105,
         img: "/images/sofa/sofa11.jpg",
         desc: "products desc is here....",
         price: 6300,

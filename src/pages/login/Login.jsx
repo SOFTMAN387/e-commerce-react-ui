@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/common/header/Header';
 import Navbar from '../../components/common/navbar/Navbar';
 import Annoucement from '../../components/common/annoucement/Annoucement';
+import Footer from '../../components/common/footer/Footer';
 const Login = () => {
   return (
    <>
@@ -43,6 +44,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        <Footer />
    </>
   )
 }

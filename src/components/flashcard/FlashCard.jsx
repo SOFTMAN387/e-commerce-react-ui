@@ -5,10 +5,21 @@ import "react-multi-carousel/lib/styles.css";
 import { useState } from 'react';
 import { FlashDeals } from '../Api/ApiData';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../redux/Store';
 const FlashCard = () => {
+    const dispatch = useDispatch();
     const [like, setLike] = useState(0);
     const increment = () => {
         setLike(like + 1);
+    }
+
+    const addItem = (itemId) => {
+        const addProduct = FlashDeals.filter((x) => x.id == itemId);
+        console.log(addProduct);
+        if (itemId) {
+            dispatch(actions.addToCart(addProduct));
+        }
     }
 
 
@@ -46,7 +57,7 @@ const FlashCard = () => {
 
 
                 <Carousel responsive={responsive}>
-                    {FlashDeals.map((flahDeals,index) => {
+                    {FlashDeals.map((flahDeals, index) => {
                         return (<>
                             <div className='flashcentercard' >
                                 <div className='flash-single-card' key={index}>
@@ -54,9 +65,9 @@ const FlashCard = () => {
                                     <div className='flah-img'>
                                         <p className='flash-offer'>{flahDeals.off}% Off</p>
                                         <Link to={`products/${flahDeals._id}`}>
-                                        <img src={flahDeals.img} className="img-fluid"  alt="flash_img" />
+                                            <img src={flahDeals.img} className="img-fluid" alt="flash_img" />
                                         </Link>
-                                       
+
                                     </div>
                                     <div className='flash-bottom'>
                                         <div className='flash-bottom-left'>
@@ -73,7 +84,7 @@ const FlashCard = () => {
                                         <div className='flash-bottom-right'>
 
                                             <i className='fa fa-heart' onClick={increment} ><span className='text-dark ml-2'> {like}</span></i>
-                                            <i className='fa fa-plus fa-add'></i>
+                                            <i className='fa fa-plus fa-add' onClick={() => addItem(flahDeals.id)}></i>
                                         </div>
                                     </div>
 
@@ -83,7 +94,7 @@ const FlashCard = () => {
                     })}
 
 
-                  
+
                 </Carousel>
 
 

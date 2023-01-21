@@ -52,9 +52,9 @@
 }
 
 .cart-val {
-    width: 20px;
+    width: 25px;
     color: white;
-    height: 20px;
+    height: 25px;
     position: absolute;
     margin-top: -8px;
     margin-left: 1px;
@@ -78,5 +78,9 @@
     }
     .top-logo {
         font-size: 20px;
+    }
+    .cart-val {
+        width: 20px;
+        height: 20px;
     }
 }

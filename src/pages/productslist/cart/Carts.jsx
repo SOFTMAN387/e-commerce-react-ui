@@ -5,8 +5,18 @@ import Services from '../../../components/common/service/Services';
 import Navbar from '../../../components/common/navbar/Navbar';
 import Footer from '../../../components/common/footer/Footer';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions } from '../../../redux/Store';
 
 const Carts = () => {
+    const dispatch=useDispatch();
+    const cartItems=useSelector((state)=>state);
+    const removeItem=(itemId)=>{
+        if(itemId){
+            dispatch(actions.removeToCart(itemId))
+        }
+
+    }
   return (
    <>
         <Header />
@@ -15,23 +25,27 @@ const Carts = () => {
                 <h2 className='cart-title'>Your Cart !</h2>
               
                 <div className='cart-top'>
-                    <button>Continue Shopping</button>
+                <Link to="/"> <button>Continue Shopping</button></Link>
+                  
                     <span>
                         <Link to=''> cart(5)</Link><span>  </span>
                         <Link to=''>WishList(5)</Link>
-                    </span>
-                    <Link to="/checkout/123"> <button className='prcd-btn'>CheckOut</button></Link>
+                    </span>{cartItems.length==0?(<span></span>):
+                    <Link to="/checkout/123"> <button className='prcd-btn'>CheckOut</button></Link>}
+                   
 
 
                 </div>
                 <hr></hr>
-                <div className='cart-middle'>
+                {cartItems.length==0  ? (<h2>Empty</h2>):cartItems.map((items)=>{
+                    return(<>
+                        <div className='cart-middle'>
                     <div className='img-fluid'>
-                        <img src='https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='abc' />
+                        <img src={items[0].img} alt='abc' />
                       <span className='cart-item-details'>
-                      <span>title</span>
-                       <span>Id:123</span>
-                       <span><b>Rs/- 1000</b></span>
+                      <span>{items[0].title}</span>
+                       <span>Id:{items[0].id}</span>
+                       <span><b>Rs/- {items[0].price}</b></span>
                         </span>
                     </div>
                  <span className='inc-btn'>
@@ -39,17 +53,26 @@ const Carts = () => {
                  <span> 5 </span>
                  <button> <i class="fa-sharp fa-solid fa-plus"></i></button>      
                  </span>
-            <i class="fa-sharp fa-2x fa-solid fa-xmark"></i>
+            <i class="fa-sharp fa-2x fa-solid fa-xmark" onClick={()=>removeItem(items[0])}></i>
             </div>
+                    </>)
+                })}
+             
+                
           
          <div>
 
          </div>
                 <br/>
+                {cartItems.length==0?( <div className='prcd-btn-div'>
+                <Link to="/"> <button className='prcd-btn'>Shope Now !</button></Link>
+               
+                </div>): 
                 <div className='prcd-btn-div'>
                 <Link to="/checkout/123"> <button className='prcd-btn'>Proceed To Order!</button></Link>
                
-                </div>
+                </div>}
+               
                
 
             </div>
