@@ -8,7 +8,7 @@ const ProductsLists = () => {
     const dispatch = useDispatch();
     const addItem = (items) => {
         const addProduct = Products.filter((x) => x.id == items);
-        console.log(addProduct);
+       // console.log(addProduct);
         if (addProduct) {
             dispatch(actions.addToCart(addProduct));
         }

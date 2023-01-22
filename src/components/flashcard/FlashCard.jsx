@@ -64,7 +64,7 @@ const FlashCard = () => {
 
                                     <div className='flah-img'>
                                         <p className='flash-offer'>{flahDeals.off}% Off</p>
-                                        <Link to={`products/${flahDeals._id}`}>
+                                        <Link to={`products/${flahDeals.id}`}>
                                             <img src={flahDeals.img} className="img-fluid" alt="flash_img" />
                                         </Link>
 
