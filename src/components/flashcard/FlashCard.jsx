@@ -15,10 +15,12 @@ const FlashCard = () => {
     }
 
     const addItem = (itemId) => {
-        const addProduct = FlashDeals.filter((x) => x.id == itemId);
-        console.log(addProduct);
-        if (itemId) {
-            dispatch(actions.addToCart(addProduct));
+        const item = FlashDeals.filter((x) => x.id == itemId);
+       
+        if (item) {
+            dispatch(actions.addToCart({item,quantity:1}));
+            alert(`Id: ${itemId} added successful !..`);
+
         }
     }
 

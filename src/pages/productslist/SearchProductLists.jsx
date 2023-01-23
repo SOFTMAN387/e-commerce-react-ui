@@ -18,10 +18,12 @@ const SearchProductLists = () => {
         // console.log(searchKey);
 
         const addItem = (items) => {
-        const addProduct = Products.filter((x) => x.id == items);
-       // console.log(addProduct);
-        if (addProduct) {
-            dispatch(actions.addToCart(addProduct));
+        const item = Products.filter((x) => x.id == items);
+       // console.log(item);
+        if (item) {
+            dispatch(actions.addToCart({item,quantity:1}));
+            alert(`Id: ${items} added successful !..`);
+
         }
     }
   return (

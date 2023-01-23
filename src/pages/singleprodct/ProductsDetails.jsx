@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import "./productsdetails.css";
 import Navbar from '../../components/common/navbar/Navbar';
 import Services from '../../components/common/service/Services';
@@ -11,7 +11,8 @@ import { useDispatch } from 'react-redux';
 import { actions } from '../../redux/Store';
 
 const ProductsDetails = () => {
-  const [qty,setQty]=useState(1);
+  const [qty, setQty] = useState(1);
+  const [add, DellCart] = useState(true);
   const dispatch = useDispatch();
   const prdct_Id = useParams().id;
   const prdct_Details = Products.filter((x) => x.id == prdct_Id);
@@ -21,14 +22,25 @@ const ProductsDetails = () => {
 
   const addFlashItem = (item) => {
     if (item) {
-      dispatch(actions.addToCart({item,quantity:qty}));
+      dispatch(actions.addToCart({ item, quantity: qty }));
     }
   }
 
   const addPrdctItem = (item) => {
     if (item) {
-      dispatch(actions.addToCart({item,quantity:qty}));
+      dispatch(actions.addToCart({ item, quantity: qty }));
+      DellCart(false);
+      alert(`Id: ${prdct_Id} added successful !..`);
+
     }
+  }
+
+  const removeItem = (itemId) => {
+    dispatch(actions.removeToCart(itemId));
+    DellCart(true);
+    alert(`Id: ${prdct_Id} removed successful !..`);
+
+
   }
   // console.log(flash_Details);
   //  console.log(prdct_Details);
@@ -50,11 +62,12 @@ const ProductsDetails = () => {
               {prdct_Details.length === 1 ? <h5>RS-/ {prdct_Details[0].price}</h5> : <h5>RS-/ {flash_Details[0].price}</h5>}
               {prdct_Details.length === 1 ? <span>{prdct_Details[0].desc}</span> : <span>{flash_Details[0].desc}</span>}
               <div>
-                <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-minus" onClick={()=>setQty(qty==1?1:qty-1)}></i></span>
+                <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-minus" onClick={() => setQty(qty == 1 ? 1 : qty - 1)}></i></span>
                 <span><b>{qty}</b></span>
-                <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-plus" onClick={()=>setQty(qty+1)}></i></span>
+                <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-plus" onClick={() => setQty(qty + 1)}></i></span>
               </div>
-              {prdct_Details.length == 0 ? (<button className='details-btn' onClick={() => addFlashItem(flash_Details)}>Add To Cart</button>) : (<button className='details-btn' onClick={() => addPrdctItem(prdct_Details)}>Add To Cart</button>)}
+              {prdct_Details.length == 0 ?(add == true ? <button className='details-btn' onClick={() => addFlashItem(flash_Details)}>Add To Cart</button> : <button className='details-btn' onClick={() => removeItem(flash_Details[0].id)}>Remove To Cart</button>) 
+              : (add == true ? <button className='details-btn' onClick={() => addPrdctItem(prdct_Details)}>Add To Cart</button> : <button className='details-btn' onClick={() => removeItem(prdct_Details[0].id)}>Remove To Cart</button>)}
 
 
             </div>

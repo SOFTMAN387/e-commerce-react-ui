@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./productslists.css";
 import { Products } from "../../components/Api/ApiData";
 import { useDispatch } from 'react-redux';
 import { actions } from '../../redux/Store';
 import { Link } from 'react-router-dom';
 const ProductsLists = () => {
+
+ //   const [add, DellCart] = useState(true);
     const dispatch = useDispatch();
     const addItem = (items) => {
-        const addProduct = Products.filter((x) => x.id == items);
-       // console.log(addProduct);
-        if (addProduct) {
-            dispatch(actions.addToCart(addProduct));
+        const item = Products.filter((x) => x.id == items);
+        // console.log(addProduct);
+        if (item) {
+            dispatch(actions.addToCart({ item, quantity: 1 }));
+            alert(`Id: ${items} added successful !..`);
+            // DellCart(false);
         }
-
-
     }
+
+
+    // const removeItem = (itemId) => {
+    //     dispatch(actions.removeToCart(itemId));
+    //     DellCart(true);
+
+    // }
     return (
         <>
 
@@ -32,7 +41,9 @@ const ProductsLists = () => {
                                 <div className='prdct-card'>
                                     <img src={items.img} className='img-fluid' alt="prdcts_img" />
                                     <div className='prdct-card-bottom'>
-                                        <i className="fa fa-shopping-cart font-icon" onClick={() => addItem(items.id)} aria-hidden="true"></i>
+                                    <i className="fa fa-shopping-cart font-icon" onClick={() => addItem(items.id)} aria-hidden="true"></i> 
+                                        {/* {add == true ? (<i className="fa fa-shopping-cart font-icon" onClick={() => addItem(items.id)} aria-hidden="true"></i>) : (<i className="fa fa-trash" onClick={() => removeItem(items.id)} aria-hidden="true"></i>)} */}
+
                                         <Link to={`products/${items.id}`}> <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
 
 

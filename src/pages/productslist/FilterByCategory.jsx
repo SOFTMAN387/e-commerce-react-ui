@@ -16,10 +16,13 @@ const FilterByCategory = () => {
     const filterProducts = Products.filter((x) => x.category == catVal);
     //console.log(filterProducts);
     const addItem = (items) => {
-        const addProduct = Products.filter((x) => x.id == items);
+        const item = Products.filter((x) => x.id == items);
        // console.log(addProduct);
-        if (addProduct) {
-            dispatch(actions.addToCart(addProduct));
+        if (item) {
+            dispatch(actions.addToCart({item,quantity:1}));
+            alert(`Id: ${items} added successful !..`);
+
+            
         }
 
 

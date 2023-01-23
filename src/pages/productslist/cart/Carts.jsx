@@ -11,14 +11,22 @@ import { actions } from '../../../redux/Store';
 const Carts = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state) ?? [];
-    //const cartItems = cartVal && cartVal[0];
-    // console.log(cartItems);
-    // console.log(cartItems[0].quantity);
+
+    //Removing sing Item from Cart..............
     const removeItem = (itemId) => {
         if (itemId) {
-            dispatch(actions.removeToCart(itemId))
+            dispatch(actions.removeToCart(itemId));
+            alert(`Id:${itemId} removed Succesful..!`);
         }
 
+    }
+    //Removing all items to Cart.........
+
+    const clearCart = () => {
+        if (cartItems) {
+            dispatch(actions.removeAllCart());
+            alert("Your Cart is Empty");
+        }
     }
     return (
         <>
@@ -31,17 +39,17 @@ const Carts = () => {
                     <Link to="/"> <button>Continue Shopping</button></Link>
 
                     <span>
-                        <Link to=''> cart(5)</Link><span>  </span>
-                        <Link to=''>WishList(5)</Link>
+                        <Link to=''> cart({cartItems.length})</Link><span>  </span>
+                        <Link to=''>WishList({cartItems.length})</Link>
                     </span>{cartItems.length == 0 ? (<span></span>) :
-                        <Link to="/checkout/123"> <button className='prcd-btn'>CheckOut</button></Link>}
+                        <button className='prcd-btn' onClick={clearCart}>Clear All !</button>}
 
 
 
                 </div>
                 <hr></hr>
                 {cartItems.length == 0 ? (<h2>Empty</h2>) : cartItems?.map((items) => {
-                   
+
                     return (<>
 
                         <div className='cart-middle'>
@@ -72,11 +80,14 @@ const Carts = () => {
                 {cartItems.length == 0 ? (<div className='prcd-btn-div'>
                     <Link to="/"> <button className='prcd-btn'>Shope Now !</button></Link>
 
-                </div>) :
+                </div>) : (
                     <div className='prcd-btn-div'>
-                        <Link to="/checkout/123"> <button className='prcd-btn'>Proceed To Order!</button></Link>
+                        <Link to="/checkout/123"> <button className='prcd-btn'>Proceed To Order!</button></Link><br />
 
-                    </div>}
+
+                    </div>
+
+                )}
 
 
 
