@@ -14,6 +14,10 @@ const cartSlice = createSlice({
         removeAllCart(state) {
             state = [];
             return state;
+        },
+        userOrdered(state, action) {
+            state = action.payload;
+            return state;
         }
         // removeToCart(state, action) {
         //     state = state.map((items) =>
