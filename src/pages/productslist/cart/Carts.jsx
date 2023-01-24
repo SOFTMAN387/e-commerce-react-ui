@@ -82,7 +82,7 @@ const Carts = () => {
 
                 </div>) : (
                     <div className='prcd-btn-div'>
-                        <Link to="/checkout/123"> <button className='prcd-btn'>Proceed To Order!</button></Link><br />
+                        <Link to="/checkout"> <button className='prcd-btn'>Proceed To Order!</button></Link><br />
 
 
                     </div>
