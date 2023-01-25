@@ -5,19 +5,29 @@ import Footer from "../../components/common/footer/Footer";
 import Services from "../../components/common/service/Services";
 import StripeCheckout from "react-stripe-checkout";
 import { actions } from "../../redux/Store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CheckOut = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [payment, setPayment] = useState("");
+  const [userdata, setUserData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address1: "",
+    address2: "",
+    country: "",
+    state: "",
+    pincode: "",
+  });
   const checkoutItem = useSelector((state) => state) ?? [];
   var total = 0;
   console.log(checkoutItem);
 
   const onToken = (token, shippingAddress) => {
-    dispatch(actions.userOrdered({ UserPayment: token, UserAdd: shippingAddress, UserPdct: checkoutItem,Total:total }));
+    dispatch(actions.userOrdered({ UserPayment: token, UserAdd: shippingAddress, UserPdct: checkoutItem, Total: total }));
     alert("Payment Successfull !");
     navigate("/user/order");
 
@@ -25,6 +35,21 @@ const CheckOut = () => {
     // console.log(shippingAddress);
   };
 
+  const changeHandler = (e) => {
+    e.preventDefault();
+    setUserData({
+      ...userdata, [e.target.name]: e.target.value,
+
+    });
+
+  }
+
+  const OrderNow = () => {
+    dispatch(actions.userOrdered({ UserAdd: userdata, UserPdct: checkoutItem, Total: total,payMode:"cash" }));
+    alert("Order Successfull !");
+
+    navigate("/user/order");
+  }
 
 
   return (
@@ -94,11 +119,13 @@ const CheckOut = () => {
                     <label for="firstName">Name</label>
                     <input
                       type="text"
+                      onChange={changeHandler}
                       className="form-control"
                       id="firstName"
                       placeholder=""
-                      value=""
-                      required=""
+                      value={userdata.name}
+                      name="name"
+                      required="required"
                     />
                     <div className="invalid-feedback">
                       Valid first name is required.
@@ -108,11 +135,13 @@ const CheckOut = () => {
                     <label for="lastName">Phone No.</label>
                     <input
                       type="text"
+                      onChange={changeHandler}
                       className="form-control"
                       id="lastName"
                       placeholder=""
-                      value=""
-                      required=""
+                      value={userdata.phone}
+                      required="required"
+                      name="phone"
                     />
                     <div className="invalid-feedback">
                       Valid last name is required.
@@ -122,13 +151,16 @@ const CheckOut = () => {
 
                 <div className="mb-3">
                   <label for="email">
-                    Email <span className="text-muted">(Optional)</span>
+                    Email <span ></span>
                   </label>
                   <input
                     type="email"
+                    onChange={changeHandler}
                     className="form-control"
                     id="email"
                     placeholder="you@example.com"
+                    name="email"
+                    value={userdata.email}
                   />
                   <div className="invalid-feedback">
                     Please enter a valid email address for shipping updates.
@@ -139,10 +171,13 @@ const CheckOut = () => {
                   <label for="address">Address</label>
                   <input
                     type="text"
+                    onChange={changeHandler}
                     className="form-control"
                     id="address"
                     placeholder="1234 Main St"
-                    required=""
+                    required="required"
+                    name="address1"
+                    value={userdata.address1}
                   />
                   <div className="invalid-feedback">
                     Please enter your shipping address.
@@ -155,9 +190,13 @@ const CheckOut = () => {
                   </label>
                   <input
                     type="text"
+                    onChange={changeHandler}
                     className="form-control"
                     id="address2"
                     placeholder="Apartment or suite"
+                    required="required"
+                    name="address2"
+                    value={userdata.address2}
                   />
                 </div>
 
@@ -167,9 +206,11 @@ const CheckOut = () => {
                     <select
                       className="custom-select d-block w-100"
                       id="country"
-                      required=""
+                      required="required"
+                      name="country"
+                      onChange={changeHandler}
                     >
-                      <option value="">Choose...</option>
+                      <option value={userdata.country}>Choose...</option>
                       <option>India</option>
                     </select>
                     <div className="invalid-feedback">
@@ -178,7 +219,7 @@ const CheckOut = () => {
                   </div>
                   <div className="col-md-4 mb-3">
                     <label for="state">State</label>
-                    <select>
+                    <select name="state" onChange={changeHandler} value={userdata.state}>
                       <option>Choose...</option>
                       <option>Andaman and Nicobar Islands</option>
                       <option>Andhra Pradesh</option>
@@ -221,29 +262,30 @@ const CheckOut = () => {
                     </div>
                   </div>
                   <div className="col-md-3 mb-3">
-                    <label for="zip">Zip</label>
+                    <label for="zip">PinCode</label>
                     <input
                       type="text"
+                      onChange={changeHandler}
                       className="form-control"
                       id="zip"
                       placeholder=""
-                      required=""
+                      required="required"
+                      name="pincode"
+                      value={userdata.pincode}
                     />
                     <div className="invalid-feedback">Zip code required.</div>
                   </div>
                   <button
                     type="button"
-                    className="btn btn-primary"
-                    data-bs-dismiss="modal"
-                  >
+                    className="btn btn-primary" onClick={OrderNow}>
                     Submit
                   </button>
                   <button
                     type="button"
-                    className="btn btn-danger ml-5"
+                    className="btn btn-danger text-white ml-5"
                     data-bs-dismiss="modal"
                   >
-                    Cancel
+                    <Link className="text-white" to="/cart/123">Cancel</Link>
                   </button>
                 </div>
 

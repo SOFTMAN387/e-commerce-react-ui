@@ -3,7 +3,7 @@ import "./navbar.css";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import SearchBar from '../searchbar/SearchBar';
+//import SearchBar from '../searchbar/SearchBar';
 //import { Products } from '../../Api/ApiData';
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
                 </div>
                 <ul className="menu-items">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/user/order">Your Order</Link></li>
                     <li>
                         <select onChange={(e) => setCat(e.target.value)}>
                             <option >Categories</option>
@@ -43,7 +43,8 @@ const Navbar = () => {
                             <option value="all">All--</option>
                         </select></li>
 
-                    <li><Link to="#">Menu</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
 
                 </ul>
 
@@ -52,4 +53,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

@@ -10,7 +10,7 @@ import { actions } from '../../../redux/Store';
 
 const Carts = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state) ?? [];
+    const cartItems = useSelector((state) => state || state.UserPdct)  ?? [];
 
     //Removing sing Item from Cart..............
     const removeItem = (itemId) => {
