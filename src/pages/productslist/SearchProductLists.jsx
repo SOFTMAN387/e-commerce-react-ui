@@ -8,6 +8,7 @@ import Header from '../../components/common/header/Header';
 import { actions } from '../../redux/Store';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ToastContainer,toast } from 'react-toastify';
 
 const SearchProductLists = () => {
     const dispatch=useDispatch();
@@ -22,13 +23,24 @@ const SearchProductLists = () => {
        // console.log(item);
         if (item) {
             dispatch(actions.addToCart({item,quantity:1}));
-            alert(`Id: ${items} added successful !..`);
-
+          //  alert(`Id: ${items} added successful !..`);
+          toast( `Id: ${items} added successful 🦄 !..`, {
+            position: "top-center",
+            type:"success",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
         }
     }
   return (
    <> 
    <Header />
+   <ToastContainer />
     <Navbar />
    <div className='prdct-list-container'>
        <div className='row'>

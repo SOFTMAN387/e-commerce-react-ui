@@ -5,6 +5,7 @@ import Services from '../../../components/common/service/Services';
 import Navbar from '../../../components/common/navbar/Navbar';
 import Footer from '../../../components/common/footer/Footer';
 import { Link } from 'react-router-dom';
+import {ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../redux/Store';
 
@@ -16,7 +17,18 @@ const Carts = () => {
     const removeItem = (itemId) => {
         if (itemId) {
             dispatch(actions.removeToCart(itemId));
-            alert(`Id:${itemId} removed Succesful..!`);
+           // alert(`Id:${itemId} removed Succesful..!`);
+           toast( `Id: ${itemId} Removed successful 🦄 !..`, {
+            position: "top-center",
+            type:"error",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
         }
 
     }
@@ -25,12 +37,24 @@ const Carts = () => {
     const clearCart = () => {
         if (cartItems) {
             dispatch(actions.removeAllCart());
-            alert("Your Cart is Empty");
+          //  alert("Your Cart is Empty");
+          toast( `Your Cart is Empty 🦄 !..`, {
+            position: "top-center",
+            type:"warning",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
         }
     }
     return (
         <>
             <Header />
+            <ToastContainer />
             <Navbar />
             <div className='cart-container'>
                 <h2 className='cart-title'>Your Cart !</h2>

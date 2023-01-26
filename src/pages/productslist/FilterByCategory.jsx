@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Products } from '../../components/Api/ApiData';
 import ProductsLists from './ProductsLists';
 import { Link } from 'react-router-dom';
+import {ToastContainer, toast } from 'react-toastify';
 import Footer from '../../components/common/footer/Footer';
 import Header from '../../components/common/header/Header';
 import { actions } from '../../redux/Store';
@@ -20,8 +21,18 @@ const FilterByCategory = () => {
        // console.log(addProduct);
         if (item) {
             dispatch(actions.addToCart({item,quantity:1}));
-            alert(`Id: ${items} added successful !..`);
-
+         //   alert(`Id: ${items} added successful !..`);
+         toast( `Id: ${items} added successful 🦄 !..`, {
+            position: "top-center",
+            type:"success",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
             
         }
 
@@ -29,7 +40,7 @@ const FilterByCategory = () => {
     }
     return (<>
         <Header />
-       
+        <ToastContainer />
         <div className='prdct-list-container'>
             <div className='row'>
                 {catVal == "all" ? <ProductsLists /> : filterProducts.map((items, i) => {

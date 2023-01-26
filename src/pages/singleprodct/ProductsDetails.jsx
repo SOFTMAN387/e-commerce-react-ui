@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/common/header/Header';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../redux/Store';
+import {ToastContainer, toast } from 'react-toastify';
 
 const ProductsDetails = () => {
   const [qty, setQty] = useState(1);
@@ -23,6 +24,18 @@ const ProductsDetails = () => {
   const addFlashItem = (item) => {
     if (item) {
       dispatch(actions.addToCart({ item, quantity: qty }));
+      toast( `Id: ${prdct_Id} added successful 🦄 !..`, {
+        position: "top-center",
+        type:"success",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+        
     }
   }
 
@@ -30,7 +43,19 @@ const ProductsDetails = () => {
     if (item) {
       dispatch(actions.addToCart({ item, quantity: qty }));
       DellCart(false);
-      alert(`Id: ${prdct_Id} added successful !..`);
+     // alert(`Id: ${prdct_Id} added successful !..`);
+      toast( `Id: ${prdct_Id} added successful 🦄 !..`, {
+        position: "top-center",
+        type:"success",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+      
 
     }
   }
@@ -38,8 +63,18 @@ const ProductsDetails = () => {
   const removeItem = (itemId) => {
     dispatch(actions.removeToCart(itemId));
     DellCart(true);
-    alert(`Id: ${prdct_Id} removed successful !..`);
-
+   // alert(`Id: ${prdct_Id} removed successful !..`);
+    toast( `Id: ${prdct_Id} removed successful 🦄 !..`, {
+      position: "top-center",
+      type:"error",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
 
   }
   // console.log(flash_Details);
@@ -47,6 +82,7 @@ const ProductsDetails = () => {
   return (
     <>
       <Header />
+      <ToastContainer />
       <Navbar />
       <div className='details-container'>
         <div className='row'>

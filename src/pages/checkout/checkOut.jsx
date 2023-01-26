@@ -6,6 +6,7 @@ import Services from "../../components/common/service/Services";
 import StripeCheckout from "react-stripe-checkout";
 import { actions } from "../../redux/Store";
 import { Link, useNavigate } from "react-router-dom";
+import {ToastContainer, toast } from 'react-toastify';
 
 const CheckOut = () => {
 
@@ -24,11 +25,12 @@ const CheckOut = () => {
   });
   const checkoutItem = useSelector((state) => state) ?? [];
   var total = 0;
-  console.log(checkoutItem);
+  //console.log(checkoutItem);
 
   const onToken = (token, shippingAddress) => {
     dispatch(actions.userOrdered({ UserPayment: token, UserAdd: shippingAddress, UserPdct: checkoutItem, Total: total }));
     alert("Payment Successfull !");
+   
     navigate("/user/order");
 
     // console.log(token);
@@ -55,6 +57,7 @@ const CheckOut = () => {
   return (
     <>
       <Header />
+      <ToastContainer />
       <div className="container my-5">
         <div className="row">
           <div className="col-md-4 order-md-2 mb-4">
@@ -66,7 +69,7 @@ const CheckOut = () => {
             </h4>
             <ul className="list-group mb-3">
               {checkoutItem?.map((items, index) => {
-                total = total + items.item?.[0].price;
+                total = total + (items.item?.[0].price*items.quantity);
                 return (<>
                   <li className="list-group-item d-flex justify-content-between lh-condensed" key={index}>
                     <div>

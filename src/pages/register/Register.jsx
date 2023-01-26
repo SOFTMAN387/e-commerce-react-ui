@@ -43,7 +43,7 @@ const Register = () => {
                 //  disabled={loading} 
                 // onClick={handleClick}
                  className="loginButton">
-                    Login
+                   Register
                 </button>
                 {/* {error && <span>{error.message}</span>} */}
                 {/* {loginErr ? <span style={{ color: "red" }}>Wrong Credentials !!...</span> : <span></span>} */}

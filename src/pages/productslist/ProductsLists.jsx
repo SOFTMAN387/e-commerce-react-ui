@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
 import "./productslists.css";
+import { toast } from 'react-toastify';
 import { Products } from "../../components/Api/ApiData";
 import { useDispatch } from 'react-redux';
 import { actions } from '../../redux/Store';
 import { Link } from 'react-router-dom';
 const ProductsLists = () => {
 
- //   const [add, DellCart] = useState(true);
     const dispatch = useDispatch();
     const addItem = (items) => {
         const item = Products.filter((x) => x.id == items);
-        // console.log(addProduct);
+       
         if (item) {
             dispatch(actions.addToCart({ item, quantity: 1 }));
-            alert(`Id: ${items} added successful !..`);
-            // DellCart(false);
+            toast( `Id: ${items} added successful 🦄 !..`, {
+                position: "top-center",
+                type:"success",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 
-
-    // const removeItem = (itemId) => {
-    //     dispatch(actions.removeToCart(itemId));
-    //     DellCart(true);
-
-    // }
     return (
         <>
 
