@@ -10,13 +10,14 @@ const NewArivals = () => {
    </div>
     <div className="row arival-main-container">
        
-        {CommingSoon.map((arrival,i)=>{
+        {CommingSoon?.map((arrival,i)=>{
             return(<>
-                <div className="col-6 col-sm-6 col-md-4">
-                <div className='arival-single-card' key={i}>
-                <img src={arrival.img} className='img-fluid' alt="arvl_img" />
+            
+            <div className="col-6 col-sm-6 col-md-4" key={i}>
+                <div className='arival-single-card' >
+                <img src={arrival.img}  className='img-fluid' alt="arvl_img" />
             <div className='arivals-bottom'>
-                <h6><b>{arrival.title}</b></h6>
+                <h6 ><b>{arrival.title}</b></h6>
                 <p>Rs-/ {arrival.price} </p>
             </div>
         </div>

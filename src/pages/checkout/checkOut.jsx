@@ -13,14 +13,14 @@ const CheckOut = () => {
   const navigate = useNavigate();
   const [payment, setPayment] = useState("");
   const [userdata, setUserData] = useState({
-    name: "",
+    shipping_name: "",
     phone: "",
     email: "",
-    address1: "",
-    address2: "",
+    shipping_address_line1: "",
+    shipping_address_city: "",
     country: "",
     state: "",
-    pincode: "",
+    shipping_address_zip: "",
   });
   const checkoutItem = useSelector((state) => state) ?? [];
   var total = 0;
@@ -45,7 +45,7 @@ const CheckOut = () => {
   }
 
   const OrderNow = () => {
-    dispatch(actions.userOrdered({ UserAdd: userdata, UserPdct: checkoutItem, Total: total,payMode:"cash" }));
+    dispatch(actions.userOrdered({ UserAdd: userdata, UserPdct: checkoutItem, Total: total, payMode: "cash" }));
     alert("Order Successfull !");
 
     navigate("/user/order");
@@ -123,8 +123,8 @@ const CheckOut = () => {
                       className="form-control"
                       id="firstName"
                       placeholder=""
-                      value={userdata.name}
-                      name="name"
+                      value={userdata.shipping_name}
+                      name="shipping_name"
                       required="required"
                     />
                     <div className="invalid-feedback">
@@ -176,8 +176,8 @@ const CheckOut = () => {
                     id="address"
                     placeholder="1234 Main St"
                     required="required"
-                    name="address1"
-                    value={userdata.address1}
+                    name="shipping_address_line1"
+                    value={userdata.shipping_address_line1}
                   />
                   <div className="invalid-feedback">
                     Please enter your shipping address.
@@ -195,8 +195,8 @@ const CheckOut = () => {
                     id="address2"
                     placeholder="Apartment or suite"
                     required="required"
-                    name="address2"
-                    value={userdata.address2}
+                    name="shipping_address_city"
+                    value={userdata.shipping_address_city}
                   />
                 </div>
 
@@ -270,8 +270,8 @@ const CheckOut = () => {
                       id="zip"
                       placeholder=""
                       required="required"
-                      name="pincode"
-                      value={userdata.pincode}
+                      name="shipping_address_zip"
+                      value={userdata.shipping_address_zip}
                     />
                     <div className="invalid-feedback">Zip code required.</div>
                   </div>

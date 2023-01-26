@@ -59,10 +59,10 @@ const FlashCard = () => {
 
 
                 <Carousel responsive={responsive}>
-                    {FlashDeals.map((flahDeals, index) => {
+                    {FlashDeals?.map((flahDeals,ind) => {
                         return (<>
-                            <div className='flashcentercard' >
-                                <div className='flash-single-card' key={index}>
+                            <div className='flashcentercard' key={ind} >
+                                <div className='flash-single-card' >
 
                                     <div className='flah-img'>
                                         <p className='flash-offer'>{flahDeals.off}% Off</p>

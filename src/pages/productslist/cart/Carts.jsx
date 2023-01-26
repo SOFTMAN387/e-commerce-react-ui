@@ -10,7 +10,7 @@ import { actions } from '../../../redux/Store';
 
 const Carts = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state || state.UserPdct)  ?? [];
+    const cartItems = useSelector((state) => state) || 0 || [];
 
     //Removing sing Item from Cart..............
     const removeItem = (itemId) => {
@@ -39,8 +39,8 @@ const Carts = () => {
                     <Link to="/"> <button>Continue Shopping</button></Link>
 
                     <span>
-                        <Link to=''> cart({cartItems.length})</Link><span>  </span>
-                        <Link to=''>WishList({cartItems.length})</Link>
+                        <Link to=''> cart({cartItems?.length})</Link><span>  </span>
+                        <Link to=''>WishList({cartItems?.length})</Link>
                     </span>{cartItems.length == 0 ? (<span></span>) :
                         <button className='prcd-btn' onClick={clearCart}>Clear All !</button>}
 
@@ -48,7 +48,7 @@ const Carts = () => {
 
                 </div>
                 <hr></hr>
-                {cartItems.length == 0 ? (<h2>Empty</h2>) : cartItems?.map((items) => {
+                {(cartItems?.length === 0 )? (<h2>Empty</h2>) : cartItems?.map((items) => {
 
                     return (<>
 

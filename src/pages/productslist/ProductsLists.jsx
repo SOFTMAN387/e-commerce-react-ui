@@ -33,18 +33,18 @@ const ProductsLists = () => {
             <div className='prdct-list-container'>
                 <div className='row'>
 
-                    {Products.map((items => {
+                    {Products?.map((items,ind) => {
                         return (<>
 
-                            <div className=' col-6 col-sm-6 col-lg-4 col-xl-3'>
+                            <div className=' col-6 col-sm-6 col-lg-4 col-xl-3' key={ind}  >
 
-                                <div className='prdct-card'>
-                                    <img src={items.img} className='img-fluid' alt="prdcts_img" />
-                                    <div className='prdct-card-bottom'>
-                                    <i className="fa fa-shopping-cart font-icon" onClick={() => addItem(items.id)} aria-hidden="true"></i> 
+                                <div className='prdct-card' key={ind}  >
+                                    <img src={items.img}  className='img-fluid'   alt="prdcts_img" />
+                                    <div className='prdct-card-bottom' key={ind}  >
+                                    <i className="fa fa-shopping-cart font-icon"   onClick={() => addItem(items.id)} aria-hidden="true"></i> 
                                         {/* {add == true ? (<i className="fa fa-shopping-cart font-icon" onClick={() => addItem(items.id)} aria-hidden="true"></i>) : (<i className="fa fa-trash" onClick={() => removeItem(items.id)} aria-hidden="true"></i>)} */}
 
-                                        <Link to={`products/${items.id}`}> <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
+                                        <Link to={`products/${items.id}`}   > <i className="fa fa-search font-icon" aria-hidden="true"></i> </Link>
 
 
 
@@ -58,7 +58,7 @@ const ProductsLists = () => {
 
 
                         </>)
-                    }))}
+                    })}
 
 
                 </div>

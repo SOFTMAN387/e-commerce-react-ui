@@ -27,13 +27,13 @@ const TopCat = () => {
 
   return (
     <><div className='topcat-container'>
-      <h5 className='flash-deals pl-5'><i class="fa-solid fa-list"></i>  Top Categories !</h5>
+      <h5 className='flash-deals pl-5'><i className="fa-solid fa-list"></i>  Top Categories !</h5>
       <br></br>
       <Carousel responsive={responsive}
         arrows={false} infiniteLoop autoPlay >
-        {categories.map((cat, i) => {
+        {categories?.map((cat, ind) => {
           return (<>
-            <div className='single-card' key={i}>
+            <div className='single-card' key={ind} >
               <div className='img-div'>
                 <Link to={`/productLists/${cat.category}`}>
                   <img alt="img" src={cat.img} className='img-fluid' />
