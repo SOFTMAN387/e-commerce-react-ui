@@ -6,7 +6,7 @@ import Services from "../../components/common/service/Services";
 import StripeCheckout from "react-stripe-checkout";
 import { actions } from "../../redux/Store";
 import { Link, useNavigate } from "react-router-dom";
-import {ToastContainer, toast } from 'react-toastify';
+
 
 const CheckOut = () => {
 
@@ -57,7 +57,7 @@ const CheckOut = () => {
   return (
     <>
       <Header />
-      <ToastContainer />
+    
       <div className="container my-5">
         <div className="row">
           <div className="col-md-4 order-md-2 mb-4">

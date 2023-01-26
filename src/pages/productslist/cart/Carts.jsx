@@ -65,7 +65,7 @@ const Carts = () => {
                     <span>
                         <Link to=''> cart({cartItems?.length})</Link><span>  </span>
                         <Link to=''>WishList({cartItems?.length})</Link>
-                    </span>{cartItems.length == 0 ? (<span></span>) :
+                    </span>{cartItems.length === 0 ? (<span></span>) :
                         <button className='prcd-btn' onClick={clearCart}>Clear All !</button>}
 
 
@@ -101,7 +101,7 @@ const Carts = () => {
 
                 </div>
                 <br />
-                {cartItems.length == 0 ? (<div className='prcd-btn-div'>
+                {cartItems.length === 0 ? (<div className='prcd-btn-div'>
                     <Link to="/"> <button className='prcd-btn'>Shope Now !</button></Link>
 
                 </div>) : (

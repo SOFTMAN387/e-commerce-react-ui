@@ -23,7 +23,7 @@ const Ordered = () => {
         {UserOrderedDetails.UserPdct?.length >0 ?(
             <div className='card-body'>
              <h6>Order ID: OD45345345435</h6>  {
-                UserOrderedDetails.payMode=="cash"?( <h6>PayMent Mode: <b className='text-primary'>Cash On Delivery , Total: RS-/{UserOrderedDetails.Total}</b></h6>  ):
+                UserOrderedDetails.payMode==="cash"?( <h6>PayMent Mode: <b className='text-primary'>Cash On Delivery , Total: RS-/{UserOrderedDetails.Total}</b></h6>  ):
                 ( <h6>PayMent Mode: <b className='text-danger'> Paid , Rs-/ {UserOrderedDetails.Total}</b></h6>  )
              }
             <p >{`Delivery to, ${OrderedAdd.shipping_name},${OrderedAdd.shipping_address_city},${OrderedAdd.shipping_address_line1},${OrderedAdd.shipping_address_zip}`} </p>

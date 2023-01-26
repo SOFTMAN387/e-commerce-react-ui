@@ -14,10 +14,10 @@ import { useDispatch } from 'react-redux';
 const FilterByCategory = () => {
     const dispatch=useDispatch();
     const catVal = useParams().cat;
-    const filterProducts = Products.filter((x) => x.category == catVal);
+    const filterProducts = Products.filter((x) => x.category === catVal);
     //console.log(filterProducts);
     const addItem = (items) => {
-        const item = Products.filter((x) => x.id == items);
+        const item = Products.filter((x) => x.id === items);
        // console.log(addProduct);
         if (item) {
             dispatch(actions.addToCart({item,quantity:1}));
@@ -43,7 +43,7 @@ const FilterByCategory = () => {
         <ToastContainer />
         <div className='prdct-list-container'>
             <div className='row'>
-                {catVal == "all" ? <ProductsLists /> : filterProducts.map((items, i) => {
+                {catVal === "all" ? <ProductsLists /> : filterProducts.map((items, i) => {
                     return (<>
 
                         <div className=' col-6 col-sm-6 col-lg-4 col-xl-3' key={i}>

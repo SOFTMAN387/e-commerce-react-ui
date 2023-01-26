@@ -17,7 +17,7 @@ const FlashCard = () => {
     }
 
     const addItem = (itemId) => {
-        const item = FlashDeals.filter((x) => x.id == itemId);
+        const item = FlashDeals.filter((x) => x.id === itemId);
 
         if (item) {
             dispatch(actions.addToCart({ item, quantity: 1 }));

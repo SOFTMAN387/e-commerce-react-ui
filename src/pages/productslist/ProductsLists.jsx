@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./productslists.css";
 import { toast } from 'react-toastify';
 import { Products } from "../../components/Api/ApiData";
@@ -9,7 +9,7 @@ const ProductsLists = () => {
 
     const dispatch = useDispatch();
     const addItem = (items) => {
-        const item = Products.filter((x) => x.id == items);
+        const item = Products.filter((x) => x.id === items);
        
         if (item) {
             dispatch(actions.addToCart({ item, quantity: 1 }));

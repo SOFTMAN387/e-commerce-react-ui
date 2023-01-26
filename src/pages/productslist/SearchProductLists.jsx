@@ -14,12 +14,12 @@ const SearchProductLists = () => {
     const dispatch=useDispatch();
     const searchKey=useParams().cat;
     const searchProducts = Products.filter(prdct =>
-        prdct.category==`${searchKey}` ||
-        prdct.title==`${searchKey}` );
+        prdct.category===`${searchKey}` ||
+        prdct.title===`${searchKey}` );
         // console.log(searchKey);
 
         const addItem = (items) => {
-        const item = Products.filter((x) => x.id == items);
+        const item = Products.filter((x) => x.id === items);
        // console.log(item);
         if (item) {
             dispatch(actions.addToCart({item,quantity:1}));
@@ -44,7 +44,7 @@ const SearchProductLists = () => {
     <Navbar />
    <div className='prdct-list-container'>
        <div className='row'>
-           {searchProducts.length == 0 || searchKey=="null" ? <div> Not Found !...</div> : searchProducts.map((items, i) => {
+           {searchProducts.length === 0 || searchKey==="null" ? <div> Not Found !...</div> : searchProducts.map((items, i) => {
                return (<>
 
                    <div className=' col-6 col-sm-6 col-lg-4 col-xl-3' key={i}>
