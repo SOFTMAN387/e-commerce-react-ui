@@ -87,7 +87,7 @@ const ProductsDetails = () => {
       <div className='details-container'>
         <div className='row'>
           <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
-            <div className='img-details-div'>{prdct_Details.length === 1 ? <img src={prdct_Details[0].img} alt='detls_img' className='img-fluid' /> : <img src={flash_Details[0].img} alt='detls_img' className='img-fluid' />}
+            <div className='img-details-div'>{prdct_Details.length === 1 ? <img src={prdct_Details?.[0].img} alt='detls_img' className='img-fluid' /> : <img src={flash_Details?.[0].img} alt='detls_img' className='img-fluid' />}
 
             </div>
           </div>
