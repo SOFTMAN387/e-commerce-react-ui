@@ -102,7 +102,7 @@ const ProductsDetails = () => {
                 <span><b>{qty}</b></span>
                 <span className='inc-dec-btn'> <i className="fa-sharp fa-solid fa-plus" onClick={() => setQty(qty + 1)}></i></span>
               </div>
-              {prdct_Details.length === 0 ? (add == true ? <button className='details-btn' onClick={() => addFlashItem(flash_Details)}>Add To Cart</button> : <button className='details-btn' onClick={() => removeItem(flash_Details[0].id)}>Remove To Cart</button>)
+              {prdct_Details.length === 0 ? (add === true ? <button className='details-btn' onClick={() => addFlashItem(flash_Details)}>Add To Cart</button> : <button className='details-btn' onClick={() => removeItem(flash_Details[0].id)}>Remove To Cart</button>)
                 : (add === true ? <button className='details-btn' onClick={() => addPrdctItem(prdct_Details)}>Add To Cart</button> : <button className='details-btn' onClick={() => removeItem(prdct_Details[0].id)}>Remove To Cart</button>)}
 
 
