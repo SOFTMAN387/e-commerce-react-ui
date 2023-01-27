@@ -13,7 +13,7 @@ import Header from '../../components/common/header/Header';
 
 const FilterProductDetails = () => {
     const filteredPrdct_Id=useParams().id;
-  const filterDetails=Products.filter((x)=>x.id===filteredPrdct_Id);
+  const filterDetails=Products.filter((x)=> `${x.id}`===filteredPrdct_Id);
   return (
     <>
     <Header />

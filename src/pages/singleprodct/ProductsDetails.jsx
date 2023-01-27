@@ -16,10 +16,11 @@ const ProductsDetails = () => {
   const [add, DellCart] = useState(true);
   const dispatch = useDispatch();
   const prdct_Id = useParams().id;
-  const prdct_Details = Products.filter((x) => x.id === prdct_Id);
-  const flash_Details = FlashDeals.filter((x) => x.id === prdct_Id);
+  console.log(typeof(prdct_Id));
+  const prdct_Details = Products.filter((x) => `${x.id}` === prdct_Id);
+  const flash_Details = FlashDeals.filter((x) => `${x.id}` === prdct_Id);
   // console.log(flash_Details);
-  // console.log(prdct_Details);
+   console.log(prdct_Details);
 
   const addFlashItem = (item) => {
     if (item) {
