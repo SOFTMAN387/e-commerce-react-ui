@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { FlashDeals } from '../Api/ApiData';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { actions } from '../../redux/Store';
+import { actions } from '../../redux/reducers/cartReducer';
 const FlashCard = () => {
     const dispatch = useDispatch();
     const [like, setLike] = useState(0);

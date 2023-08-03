@@ -7,11 +7,10 @@ import Footer from '../../../components/common/footer/Footer';
 import { Link } from 'react-router-dom';
 import {ToastContainer, toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '../../../redux/Store';
-
+import { actions } from '../../../redux/reducers/cartReducer';
 const Carts = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state) || 0 || [];
+    const cartItems = useSelector((state) => state.currentItem) || 0 || [];
 
     //Removing sing Item from Cart..............
     const removeItem = (itemId) => {

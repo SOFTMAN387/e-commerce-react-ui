@@ -5,7 +5,7 @@ import { Products } from '../../components/Api/ApiData';
 import Footer from '../../components/common/footer/Footer';
 import Navbar from '../../components/common/navbar/Navbar';
 import Header from '../../components/common/header/Header';
-import { actions } from '../../redux/Store';
+import { actions } from '../../redux/reducers/cartReducer';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ToastContainer,toast } from 'react-toastify';

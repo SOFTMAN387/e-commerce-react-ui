@@ -3,7 +3,7 @@ import "./productslists.css";
 import { toast } from 'react-toastify';
 import { Products } from "../../components/Api/ApiData";
 import { useDispatch } from 'react-redux';
-import { actions } from '../../redux/Store';
+import { actions } from '../../redux/reducers/cartReducer';
 import { Link } from 'react-router-dom';
 const ProductsLists = () => {
 

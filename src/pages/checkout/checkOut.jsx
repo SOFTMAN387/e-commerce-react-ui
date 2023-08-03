@@ -4,7 +4,7 @@ import Header from "../../components/common/header/Header";
 import Footer from "../../components/common/footer/Footer";
 import Services from "../../components/common/service/Services";
 import StripeCheckout from "react-stripe-checkout";
-import { actions } from "../../redux/Store";
+import { actions } from "../../redux/reducers/cartReducer";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -23,12 +23,14 @@ const CheckOut = () => {
     state: "",
     shipping_address_zip: "",
   });
-  const checkoutItem = useSelector((state) => state) ?? [];
+  const checkoutItem = useSelector((state) => state?.currentItem) ?? [];
+  //console.log(checkoutItem);
   var total = 0;
   //console.log(checkoutItem);
 
   const onToken = (token, shippingAddress) => {
     dispatch(actions.userOrdered({ UserPayment: token, UserAdd: shippingAddress, UserPdct: checkoutItem, Total: total }));
+    dispatch(actions.removeAllCart());
     alert("Payment Successfull !");
    
     navigate("/user/order");
@@ -48,6 +50,7 @@ const CheckOut = () => {
 
   const OrderNow = () => {
     dispatch(actions.userOrdered({ UserAdd: userdata, UserPdct: checkoutItem, Total: total, payMode: "cash" }));
+    dispatch(actions.removeAllCart());
     alert("Order Successfull !");
 
     navigate("/user/order");

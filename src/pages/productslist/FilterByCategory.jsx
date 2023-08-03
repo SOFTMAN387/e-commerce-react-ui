@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import {ToastContainer, toast } from 'react-toastify';
 import Footer from '../../components/common/footer/Footer';
 import Header from '../../components/common/header/Header';
-import { actions } from '../../redux/Store';
+import { actions } from '../../redux/reducers/cartReducer';
 import { useDispatch } from 'react-redux';
 
 

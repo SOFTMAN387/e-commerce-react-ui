@@ -4,7 +4,8 @@ import "./header.css";
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const cartLenght=useSelector((state)=>state.length) || 0;
+  const cartLenght=useSelector((state)=>state?.currentItem?.length) || 0;
+ 
     return (
        <>
            <div className="topbar">

@@ -7,14 +7,14 @@ import Footer from '../../components/common/footer/Footer';
 import "./ordered.css"
 
 const Ordered = () => {
-    const UserOrderedDetails = useSelector((state) => state) ?? [];
+    const UserOrderedDetails = useSelector((state) => state.currentUserOrdered) ?? [];
     // console.log(UserOrderedDetails.UserAdd);
     // console.log(UserOrderedDetails.UserPdct);
     // console.log(UserOrderedDetails.UserPdct.length);
     const d= new Date();
      const OrderedPrdct=UserOrderedDetails.UserPdct;
      const OrderedAdd=UserOrderedDetails.UserAdd;
-     console.log(OrderedAdd);
+    // console.log(OrderedAdd);
     return ( <>
     <Header />
    <div className='container'>

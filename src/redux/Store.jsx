@@ -1,36 +1,18 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
-const addItem = [];
-const cartSlice = createSlice({
-    name: "cart",
-    initialState: addItem,
-    reducers: {
-        addToCart(state, action) {
-            return [...state, action.payload];
-        },
-        removeToCart(state, action) {
-            state = state.filter((x) => x.item[0].id !== action.payload);
-            return state;
-        },
-        removeAllCart(state) {
-            state = [];
-            return state;
-        },
-        userOrdered(state, action) {
-            state = action.payload;
-            return state;
-        }
-        // removeToCart(state, action) {
-        //     state = state.map((items) =>
-        //         items.filter((x) => x.id !== action.payload)
-        //     );
-        //     return state;
-        // },
-    },
-});
+import { configureStore } from "@reduxjs/toolkit";
+import cartReducer from "./reducers/cartReducer";
+import  storage  from "redux-persist/lib/storage";
+import { persistStore,persistReducer } from "redux-persist";
 
-export const actions = cartSlice.actions;
-const store = configureStore({
-    reducer: cartSlice.reducer,
+const persistConfig={
+    key:"ecommerce-key",
+    storage,
+}
+const persistedReducer=persistReducer(persistConfig,cartReducer);
+// const rootReducer=combineReducers({
+//     user:authReducer
+// });
+export const store=configureStore({
+    // reducer:rootReducer
+    reducer:persistedReducer
 });
-
-export default store;
+export const persistor=persistStore(store);

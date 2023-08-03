@@ -8,7 +8,7 @@ import { FlashDeals } from '../../components/Api/ApiData';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/common/header/Header';
 import { useDispatch } from 'react-redux';
-import { actions } from '../../redux/Store';
+import { actions } from '../../redux/reducers/cartReducer';
 import { ToastContainer, toast } from 'react-toastify';
 
 const ProductsDetails = () => {
